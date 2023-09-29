@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.util.Objects;
 
@@ -17,7 +16,7 @@ public class Main extends Application {
         Main.stage = stage;
         Parent panel = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("sign_in.fxml")));
         stage.setScene(new Scene(panel));
-        stage.setTitle("АВТОСЕРВИС");
+        stage.setTitle("АВТОМАСТЕРСКАЯ");
         stage.show();
     }
     public static void main(String[] args) {
@@ -32,7 +31,6 @@ public class Main extends Application {
             throw new RuntimeException(e);
         }
     }
-
     public static void setStage(Stage stage) {
         Main.stage = stage;
     }
