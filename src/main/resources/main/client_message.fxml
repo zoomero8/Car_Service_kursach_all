@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="330.0" style="-fx-background-color: green;" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <AnchorPane layoutY="31.0" prefHeight="102.0" prefWidth="352.0" style="-fx-background-color: yellow;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+            <children>
+            <Text fill="#02282f" layoutX="25.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Свободных сотрудников нет" textAlignment="CENTER" wrappingWidth="280.1600341796875" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="33.41796875">
+               <font>
+                  <Font name="Rostov" size="20.0" />
+               </font>
+            </Text>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
