@@ -17,7 +17,7 @@ public class Main extends Application {
         Main.stage = stage;
         Parent panel = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("sign_in.fxml")));
         stage.setScene(new Scene(panel));
-        stage.setTitle("Автосервис");
+        stage.setTitle("АВТОСЕРВИС");
         stage.show();
     }
     public static void main(String[] args) {
