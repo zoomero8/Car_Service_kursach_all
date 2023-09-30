@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import special.User;
 
 import java.sql.SQLException;
 import java.util.Objects;
@@ -52,7 +53,7 @@ public class PassController {
                     if (id == 6) AdminEditController.save();
                     if (id == 7) EmployeeEditController.save();
                     if (id == 8) AdminClientsEditController.save();
-                    if (id == 9) AdminClientsAddController.add();
+                    if (id == 9) User.add();
                     if (id == 10) AdminClientsController.delete();
                     if (id == 11) ClientEditController.save();
                     if (id == 12) ClientGarageEditCarController.save();

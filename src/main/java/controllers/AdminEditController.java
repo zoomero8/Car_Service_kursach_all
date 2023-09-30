@@ -52,7 +52,6 @@ public class AdminEditController extends Protect_constants {
             if (!Objects.equals(AdminEditController.login, "")) {
 
                 try {
-
                     String query = "SELECT * FROM " + CLIENTS_TABLE + " WHERE " + CLIENTS_LOGIN + " =?";
                     PreparedStatement preparedStatement = DatabaseHandler.getInstance().prepareStatement(query);
                     preparedStatement.setString(1, AdminEditController.login);
