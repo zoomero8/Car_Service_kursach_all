@@ -159,10 +159,6 @@ public class User {
         return salary;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
     public String getService_count() {
         return service_count;
     }
@@ -191,9 +187,6 @@ public class User {
         this.address = address;
     }
 
-    public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
-    }
 
     public void setLogin(String login) {
         this.login = login;
@@ -203,39 +196,14 @@ public class User {
         this.password = password;
     }
 
-    public void setCar_now(String car_now) {
-        this.car_now = car_now;
-    }
-
-    public void setCar_old(String car_old) {
-        this.car_old = car_old;
-    }
-
-    public void setCars(String cars) {
-        this.cars = cars;
-    }
 
     public void setWork_time(String work_time) {
         this.work_time = work_time;
     }
 
-    public void setSalary(String salary) {
-        this.salary = salary;
-    }
-
-    public void setService_count(String service_count) {
-        this.service_count = service_count;
-    }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public void setPost(String post) {
-        this.post = post;
-    }
 }

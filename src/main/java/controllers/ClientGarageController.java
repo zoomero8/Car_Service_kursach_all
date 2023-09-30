@@ -317,7 +317,7 @@ public class ClientGarageController extends Protect_constants {
                     flag = false;
                     text_mistake.setText("Мы не обслуживаем введёную модель автомобилей.");
                 }
-                // проверка гос.номера
+                // Проверка гос. номера
                 if (Objects.equals(licensePlate, "")) {
                     String regex = "[АВЕКМНОРСТУХ]\\d{3}[АВЕКМНОРСТУХ]{2}\\d{2,3}\\b|\\b[ABEKMHOPCTYX]\\d{3}[ABEKMHOPCTYX]{2}\\d{2,3}";
                     if (!licensePlate.matches(regex)) {

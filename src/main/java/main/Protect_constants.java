@@ -18,7 +18,6 @@ public class Protect_constants {
     protected static final String CLIENTS_PHONE_NUMBER = "phone_number";
     protected static final String CLIENTS_LOGIN = "login";
     protected static final String CLIENTS_PASSWORD = "password";
-    protected static final String CLIENTS_STATUS = "status";
 
 
     protected static final String DETAILS_TABLE = "details";
