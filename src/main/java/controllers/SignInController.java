@@ -92,6 +92,14 @@ public class SignInController extends Protect_constants {
                         "HAVING e." + EMPLOYEES_LOGIN + " = '" + login + "' AND e." + EMPLOYEES_PASSWORD + " = '" +
                         password + "';";
 
+//                SELECT e.*,
+//                SUM(s.work_time) AS total_work_time,
+//                SUM(d.price) * 0.2 AS total_salary
+//                FROM employees e
+//                JOIN services s ON e.login = s.id_employee
+//                JOIN details d ON s.detail_serial_number = d.serial_number
+//                WHERE e.login = '1234' AND e.password = '4321'
+//                GROUP BY e.login;
                 String query_admin = "SELECT e.*,\n" +
                         "    SUM(s." + SERVICES_WORK_TIME + ") AS total_work_time,\n" +
                         "    SUM(d." + DETAILS_PRICE + ") * 0.2 AS total_salary\n" +
@@ -269,11 +277,9 @@ public class SignInController extends Protect_constants {
                     }
 
                 }
-
                 else {
                     System.out.println("Error: user is not found");
                     text_mistake.setText("Пользователь не найден.");
-
                 }
                 break;
             } catch (SQLException | ClassNotFoundException ex) {
