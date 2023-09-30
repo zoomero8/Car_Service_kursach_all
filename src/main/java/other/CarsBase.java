@@ -15,7 +15,7 @@ public class CarsBase {
                 "Audi", "Nissan", "Hyundai", "Kia", "Volvo", "Subaru", "Mazda", "Lexus", "Jeep", "Tesla", "Land Rover",
                 "Porsche", "Jaguar", "Ferrari", "Lamborghini", "Maserati", "Bentley", "Rolls-Royce", "Aston Martin",
                 "McLaren", "Bugatti", "Lotus", "Alfa Romeo", "Fiat", "Chrysler", "Dodge", "Peugeot", "Renault",
-                "Citroen", "Suzuki", "Mitsubishi", "Infiniti", "GMC", "Lincoln", "Geely", "Great Wall", "BYD", "Chery"};
+                "Citroen", "Suzuki", "Mitsubishi", "Infiniti", "GMC", "Lincoln", "Geely", "Great Wall", "Chery"};
 
         return new HashSet<>(Arrays.asList(carBrandsArray));
     }
