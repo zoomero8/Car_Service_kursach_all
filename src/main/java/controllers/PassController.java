@@ -1,6 +1,6 @@
 package controllers;
 
-import graphics.Shake;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -68,8 +68,7 @@ public class PassController {
             else {
                 System.out.println("Error: password entered incorrectly.");
                 text_mistake.setText("Пароль введён неправильно!");
-                Shake passwordAnim = new Shake(passwordField);
-                passwordAnim.playAnim();
+
             }
 
         });

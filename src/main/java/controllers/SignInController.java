@@ -1,7 +1,7 @@
 package controllers;
 
 
-import graphics.Shake;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -52,13 +52,11 @@ public class SignInController extends Protect_constants {
             if (login.equals("")) {
                 System.out.println("Error: login is empty.");
                 text_mistake.setText("Вы не ввели логин!");
-                Shake loginAnim = new Shake(loginField);
-                loginAnim.playAnim();
+
             } else if (password.equals("")) {
                 System.out.println("Error: password is empty.");
                 text_mistake.setText("Вы не ввели пароль!");
-                Shake passwordAnim = new Shake(passwordField);
-                passwordAnim.playAnim();
+
             } else signInUser(login, password);
 
             PassController.setPassword(password);
@@ -275,10 +273,7 @@ public class SignInController extends Protect_constants {
                 else {
                     System.out.println("Error: user is not found");
                     text_mistake.setText("Пользователь не найден.");
-                    Shake loginAnim = new Shake(loginField);
-                    Shake passwordAnim = new Shake(passwordField);
-                    loginAnim.playAnim();
-                    passwordAnim.playAnim();
+
                 }
                 break;
             } catch (SQLException | ClassNotFoundException ex) {
