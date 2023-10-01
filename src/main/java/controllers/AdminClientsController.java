@@ -100,9 +100,10 @@ public class AdminClientsController extends Protect_constants {
 
     private boolean pane_flag = false;
 
+    User user = new User();
+
     @FXML
     void initialize() throws SQLException, ClassNotFoundException {
-
         // добавление информации о клиентах
         String query = "SELECT c.*" +
                 ", COUNT(DISTINCT " + CARS_TABLE + "." + CARS_LICENSE_PLATE + ") AS car_count, COUNT(DISTINCT " +

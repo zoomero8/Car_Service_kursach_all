@@ -87,6 +87,10 @@ public class User extends Protect_constants {
 
     private String post; // 0 - client 1 - employee 2 - admin
 
+    // Создание модели
+    public User (){
+    }
+
     // client
     public User(String last_name, String first_name,
                 String second_name, String address,
