@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -11,13 +16,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #658572;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EmployeeServicesController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: green;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EmployeeServicesController">
    <children>
-      <VBox layoutX="10.0" layoutY="45.0" prefHeight="365.0" prefWidth="60.0" style="-fx-background-color: #384a40;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox layoutX="10.0" layoutY="45.0" prefHeight="365.0" prefWidth="60.0" style="-fx-background-color: yellow;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Pane prefHeight="220.0" prefWidth="40.0">
                <children>
-                  <Button fx:id="button_menu1" mnemonicParsing="false" prefHeight="220.0" prefWidth="60.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="button_menu1" mnemonicParsing="false" prefHeight="220.0" prefWidth="60.0" style="-fx-background-color: yellow;" />
                </children>
             </Pane>
             <Pane prefHeight="70.0" prefWidth="60.0">
@@ -32,10 +37,10 @@
             </Pane>
             <Pane prefHeight="70.0" prefWidth="60.0" style="-fx-background-color: #4d5e54;">
                <children>
-                  <Button fx:id="personal_service1" mnemonicParsing="false" prefHeight="70.0" prefWidth="60.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="personal_service1" mnemonicParsing="false" prefHeight="70.0" prefWidth="60.0" style="-fx-background-color: yellow;" />
                   <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../img/service.png" />
+                        <Image url="@../img/work_time.png" />
                      </image>
                   </ImageView>
                </children>
@@ -52,67 +57,67 @@
             </Pane>
             <Pane prefHeight="100.0" prefWidth="60.0">
                <children>
-                  <Button fx:id="button_menu2" mnemonicParsing="false" prefHeight="100.0" prefWidth="60.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="button_menu2" mnemonicParsing="false" prefHeight="100.0" prefWidth="60.0" style="-fx-background-color: yellow;" />
                </children>
             </Pane>
          </children>
       </VBox>
-      <Text fill="#0b2422" layoutX="279.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="услуги" AnchorPane.leftAnchor="280.0" AnchorPane.topAnchor="15.0">
+      <Text fill="#0b2422" layoutX="279.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Услуги" AnchorPane.leftAnchor="280.0" AnchorPane.topAnchor="15.0">
          <font>
             <Font name="RussianPunk" size="78.0" />
          </font>
       </Text>
-      <Text fill="#0b2422" layoutX="303.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ВРЕМЯ, ПОТРАЧЕННОЕ НА РАБОТУ" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="150.0">
+      <Text fill="#0b2422" layoutX="303.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Время работы" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="150.0">
          <font>
             <Font name="Rostov" size="25.0" />
          </font>
       </Text>
-      <Text fill="#0b2422" layoutX="399.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ПРОБЕГ РЕМОНТИРУЕМОЙ МАШИНЫ" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="250.0">
+      <Text fill="#0b2422" layoutX="399.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Пробег" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="250.0">
          <font>
             <Font name="Rostov" size="25.0" />
          </font>
       </Text>
-      <Text fill="#0b2422" layoutX="305.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="МОДЕЛЬ РЕМОНТИРУЕМОЙ МАШИНЫ" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="350.0">
+      <Text fill="#0b2422" layoutX="305.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Модель" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="350.0">
          <font>
             <Font name="Rostov" size="25.0" />
          </font>
       </Text>
-      <Text fill="#0b2422" layoutX="308.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" text="УСТАНАВЛИВАЕМАЯ ДЕТАЛЬ" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="450.0">
+      <Text fill="#0b2422" layoutX="308.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Деталь" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="450.0">
          <font>
             <Font name="Rostov" size="25.0" />
          </font>
       </Text>
-      <Text fx:id="text_mileage" fill="#0b2422" layoutX="306.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="300.0">
+      <Text fx:id="text_mileage" fill="#0b2422" layoutX="418.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" AnchorPane.leftAnchor="418.0" AnchorPane.topAnchor="254.41796875">
          <font>
             <Font name="Rostov" size="20.0" />
          </font>
       </Text>
-      <Text fx:id="text_time" fill="#0b2422" layoutX="302.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="200.0">
+      <Text fx:id="text_time" fill="#0b2422" layoutX="493.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" AnchorPane.leftAnchor="493.0" AnchorPane.topAnchor="154.41796875">
          <font>
             <Font name="Rostov" size="20.0" />
          </font>
       </Text>
-      <Text fx:id="text_detail" fill="#0b2422" layoutX="303.0" layoutY="524.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="500.0">
+      <Text fx:id="text_detail" fill="#0b2422" layoutX="418.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" AnchorPane.leftAnchor="418.0" AnchorPane.topAnchor="454.41796875">
          <font>
             <Font name="Rostov" size="20.0" />
          </font>
       </Text>
-      <Text fx:id="text_model" fill="#0b2422" layoutX="305.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="400.0">
+      <Text fx:id="text_model" fill="#0b2422" layoutX="418.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" AnchorPane.leftAnchor="418.0" AnchorPane.topAnchor="354.41796875">
          <font>
             <Font name="Rostov" size="20.0" />
          </font>
       </Text>
-      <Text fill="#0b2422" layoutX="306.0" layoutY="551.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ОПЛАТА" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="550.0">
+      <Text fill="#0b2422" layoutX="306.0" layoutY="551.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Оплата" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="550.0">
          <font>
             <Font name="Rostov" size="25.0" />
          </font>
       </Text>
-      <Text fx:id="text_price" fill="#0b2422" layoutX="441.0" layoutY="573.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" AnchorPane.leftAnchor="440.0" AnchorPane.topAnchor="550.0">
+      <Text fx:id="text_price" fill="#0b2422" layoutX="418.0" layoutY="572.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" AnchorPane.leftAnchor="418.0" AnchorPane.topAnchor="550.41796875">
          <font>
             <Font name="Rostov" size="20.0" />
          </font>
       </Text>
-      <TableView fx:id="list_view" layoutX="95.0" layoutY="141.0" prefHeight="416.0" prefWidth="176.0" style="-fx-background-color: #42574b; -fx-background-radius: 1; -fx-border-color: #1e290b;" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="150.0">
+      <TableView fx:id="list_view" layoutX="95.0" layoutY="141.0" prefHeight="416.0" prefWidth="176.0" style="-fx-background-color: white; -fx-background-radius: 1; -fx-border-color: #1e290b;" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="150.0">
         <columns>
           <TableColumn fx:id="table" minWidth="175.00003051757812" prefWidth="175.00003051757812" text="ВАШИ УСЛУГИ" />
         </columns>

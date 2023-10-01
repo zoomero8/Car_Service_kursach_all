@@ -18,17 +18,17 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="913.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ClientGarageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: green;" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ClientGarageController">
    <children>
-      <Text fill="#02282f" layoutX="355.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Гараж" wrappingWidth="257.8680114746094" AnchorPane.leftAnchor="355.0" AnchorPane.topAnchor="14.0">
+      <Text fill="#02282f" layoutX="274.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Гараж" wrappingWidth="257.8680114746094" AnchorPane.leftAnchor="274.0" AnchorPane.topAnchor="15.0">
          <font>
             <Font name="RussianPunk" size="78.0" />
          </font>
       </Text>
-      <TableView fx:id="view_table_now" layoutX="99.0" layoutY="214.0" prefHeight="333.0" prefWidth="199.0" style="-fx-background-color: white; -fx-border-color: black;" AnchorPane.leftAnchor="99.0" AnchorPane.topAnchor="214.0">
-        <columns>
-          <TableColumn fx:id="cars_now" prefWidth="197.0" />
-        </columns>
+      <TableView fx:id="view_table_now" layoutX="118.0" layoutY="275.0" prefHeight="333.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #486665;" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="195.0">
+         <columns>
+            <TableColumn fx:id="cars_now" prefWidth="150.0" text="Машины во владении" />
+         </columns>
       </TableView>
       <Text fx:id="text_mistake" fill="#8a2f1f" layoutX="352.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="400.0">
          <font>
@@ -39,38 +39,60 @@
          <children>
             <Pane prefHeight="220.0" prefWidth="40.0">
                <children>
-                  <Button fx:id="button_menu1" mnemonicParsing="false" prefHeight="261.0" prefWidth="99.0" style="-fx-background-color: green;" />
+                  <Button fx:id="button_menu1" mnemonicParsing="false" prefHeight="220.0" prefWidth="60.0" style="-fx-background-color: yellow;" />
                </children>
             </Pane>
-            <Pane prefHeight="70.0" prefWidth="60.0" />
-            <Pane prefHeight="70.0" prefWidth="60.0" style="-fx-background-color: #517372;" />
+            <Pane prefHeight="70.0" prefWidth="60.0">
+               <children>
+                  <Button fx:id="personal_acc1" mnemonicParsing="false" prefHeight="70.0" prefWidth="60.0" style="-fx-background-color: yellow;" />
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/user.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane prefHeight="70.0" prefWidth="60.0" style="-fx-background-color: #517372;">
+               <children>
+                  <Button fx:id="personal_garage1" mnemonicParsing="false" prefHeight="70.0" prefWidth="60.0" style="-fx-background-color: yellow;" />
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/garage.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
             <Pane prefHeight="241.0" prefWidth="60.0">
                <children>
-                  <Button fx:id="button_menu2" mnemonicParsing="false" prefHeight="321.0" prefWidth="99.0" style="-fx-background-color: green;" />
-                  <Button fx:id="personal_garage1" layoutX="2.0" layoutY="-32.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="99.0" style="-fx-background-color: green;" text="ГАРАЖ" />
+                  <Button fx:id="button_menu2" mnemonicParsing="false" prefHeight="242.0" prefWidth="60.0" style="-fx-background-color: yellow;" />
                </children>
             </Pane>
          </children>
       </VBox>
-      <Button fx:id="button_now" layoutX="99.0" layoutY="173.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="199.0" style="-fx-background-color: white;" text="Ваши автомобили" textFill="#02282f" AnchorPane.leftAnchor="99.0" AnchorPane.topAnchor="173.0">
+      <Button fx:id="button_now" layoutX="98.0" layoutY="157.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="151.0" text="Во владении" textFill="#02282f" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="150.0">
          <font>
             <Font name="Rostov" size="20.0" />
          </font>
       </Button>
-      <TextField fx:id="text_license_plate" layoutX="354.0" layoutY="211.0" prefHeight="26.0" prefWidth="130.0" promptText="Гос.номер" style="-fx-background-color: white;" AnchorPane.leftAnchor="354.0" AnchorPane.topAnchor="211.0" />
-      <TextField fx:id="text_model" layoutX="494.0" layoutY="211.0" prefHeight="26.0" prefWidth="130.0" promptText="Модель" style="-fx-background-color: white;" AnchorPane.leftAnchor="494.0" AnchorPane.topAnchor="211.0" />
-      <TextField fx:id="text_make" layoutX="634.0" layoutY="211.0" prefHeight="26.0" prefWidth="130.0" promptText="Марка" style="-fx-background-color: white;" AnchorPane.leftAnchor="634.0" AnchorPane.topAnchor="211.0" />
-      <Button fx:id="button_add_car" layoutX="774.0" layoutY="208.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: white;" text="+" textFill="#0b2422" AnchorPane.leftAnchor="774.0" AnchorPane.topAnchor="208.0">
+      <Button fx:id="button_old" layoutX="110.0" layoutY="533.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="151.0" text="Устаревшие" textFill="#02282f" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="530.0">
+         <font>
+            <Font name="Rostov" size="20.0" />
+         </font>
+      </Button>
+      <TextField fx:id="text_license_plate" layoutX="263.0" layoutY="200.0" prefHeight="26.0" prefWidth="130.0" promptText="Гос.номер" style="-fx-background-color: white;" AnchorPane.leftAnchor="280.0" AnchorPane.topAnchor="200.0" />
+      <TextField fx:id="text_model" layoutX="437.0" layoutY="200.0" prefHeight="26.0" prefWidth="130.0" promptText="Модель" style="-fx-background-color: white;" AnchorPane.leftAnchor="420.0" AnchorPane.topAnchor="200.0" />
+      <TextField fx:id="text_make" layoutX="589.0" layoutY="202.0" prefHeight="26.0" prefWidth="130.0" promptText="Марка" style="-fx-background-color: white;" AnchorPane.leftAnchor="560.0" AnchorPane.topAnchor="200.0" />
+      <Button fx:id="button_add_car" layoutX="696.0" layoutY="197.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: white;" text="+" textFill="#0b2422" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="197.0">
          <font>
             <Font name="Monospaced Regular" size="15.0" />
          </font>
       </Button>
-      <Text fill="#02282f" layoutX="374.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Добавить автомобиль" textAlignment="CENTER" wrappingWidth="403.41466387641594" AnchorPane.leftAnchor="374.0" AnchorPane.topAnchor="156.0224609375">
+      <Text fill="#02282f" layoutX="306.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ДОБАВИТЬ МАШИНУ:" textAlignment="CENTER" wrappingWidth="403.41466387641594" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="160.0">
          <font>
             <Font name="Rostov" size="25.0" />
          </font>
       </Text>
-      <TableView fx:id="view_table_services" layoutX="358.0" layoutY="362.0" prefHeight="188.0" prefWidth="450.0" style="-fx-background-color: white; -fx-border-color: black;" AnchorPane.leftAnchor="358.0">
+      <TableView fx:id="view_table_services" layoutX="300.0" layoutY="341.0" prefHeight="188.0" prefWidth="450.0" style="-fx-background-color: white; -fx-border-color: #486665;" AnchorPane.leftAnchor="280.0">
          <columns>
             <TableColumn fx:id="services_mileage" prefWidth="110.0" text="Пробег" />
             <TableColumn fx:id="services_details" prefWidth="120.0" text="Деталь" />
@@ -78,39 +100,49 @@
             <TableColumn fx:id="services_final_date" prefWidth="110.0" text="Дата конца" />
          </columns>
       </TableView>
-      <Text fill="#02282f" layoutX="374.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Добавить услугу" textAlignment="CENTER" wrappingWidth="403.41466387641594" AnchorPane.leftAnchor="374.0" AnchorPane.topAnchor="247.0">
+      <Text fill="#02282f" layoutX="318.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ДОБАВИТЬ УСЛУГУ:" textAlignment="CENTER" wrappingWidth="403.41466387641594" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="235.0">
          <font>
             <Font name="Rostov" size="25.0" />
          </font>
       </Text>
-      <TextField fx:id="text_mileage" layoutX="424.0" layoutY="281.0" prefHeight="26.0" prefWidth="130.0" promptText="Пробег" style="-fx-background-color: white;" AnchorPane.leftAnchor="424.0" AnchorPane.topAnchor="281.0" />
-      <ChoiceBox fx:id="choice_box_detail" layoutX="604.0" layoutY="281.0" prefHeight="26.0" prefWidth="130.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="604.0" AnchorPane.topAnchor="281.0" />
-      <Button fx:id="button_add_service" layoutX="774.0" layoutY="279.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: white;" text="+" textFill="#0b2422">
+      <TextField fx:id="text_mileage" layoutX="282.0" layoutY="266.0" prefHeight="26.0" prefWidth="130.0" promptText="Пробег" style="-fx-background-color: white;" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="270.0" />
+      <ChoiceBox fx:id="choice_box_detail" layoutX="430.0" layoutY="269.0" prefHeight="26.0" prefWidth="130.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="530.0" AnchorPane.topAnchor="270.0" />
+      <Button fx:id="button_add_service" layoutX="700.0" layoutY="268.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: white;" text="+" textFill="#0b2422">
          <font>
             <Font name="Monospaced Regular" size="15.0" />
          </font>
       </Button>
-      <Text fill="#02282f" layoutX="384.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Услги вашего автомобиля" textAlignment="CENTER" wrappingWidth="403.41466387641594" AnchorPane.leftAnchor="384.0" AnchorPane.topAnchor="323.0224609375">
+      <Text fill="#02282f" layoutX="313.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="УСЛУГИ ВЫБРАННОЙ МАШИНЫ:" textAlignment="CENTER" wrappingWidth="403.41466387641594" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="305.0">
          <font>
             <Font name="Rostov" size="25.0" />
          </font>
       </Text>
+      <Button fx:id="button_edit" layoutX="137.0" layoutY="117.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="✏️" textFill="#02282f" AnchorPane.leftAnchor="135.0" AnchorPane.topAnchor="115.0">
+         <font>
+            <Font name="Monospaced Regular" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="button_delete" layoutX="180.0" layoutY="115.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="-" textFill="#02282f" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="115.0">
+         <font>
+            <Font name="Monospaced Regular" size="15.0" />
+         </font>
+      </Button>
       <TableView fx:id="view_table_old" layoutX="128.0" layoutY="285.0" prefHeight="333.0" prefWidth="150.0" style="-fx-background-color: #486665; -fx-border-color: #486665;" visible="false" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="195.0">
          <columns>
             <TableColumn fx:id="cars_old" prefWidth="150.0" text="Устаревшие машины" />
          </columns>
       </TableView>
-      <Text fx:id="car_make" fill="#02282f" layoutX="367.0" layoutY="602.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" textAlignment="CENTER" wrappingWidth="213.02782305610344" AnchorPane.leftAnchor="367.0" AnchorPane.topAnchor="580.41796875">
+      <Text fx:id="car_make" fill="#02282f" layoutX="268.0" layoutY="556.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" textAlignment="CENTER" wrappingWidth="213.02782305610344" AnchorPane.leftAnchor="280.0" AnchorPane.topAnchor="540.0">
          <font>
             <Font name="Rostov" size="20.0" />
          </font>
       </Text>
-      <Text fx:id="car_model" fill="#02282f" layoutX="597.0" layoutY="602.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" textAlignment="CENTER" wrappingWidth="213.02782305610344" AnchorPane.leftAnchor="597.0" AnchorPane.topAnchor="580.41796875">
+      <Text fx:id="car_model" fill="#02282f" layoutX="512.0" layoutY="560.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" textAlignment="CENTER" wrappingWidth="213.02782305610344" AnchorPane.leftAnchor="510.0" AnchorPane.topAnchor="540.0">
          <font>
             <Font name="Rostov" size="20.0" />
          </font>
       </Text>
-      <Text fx:id="license_plate" fill="#02282f" layoutX="479.0" layoutY="632.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" textAlignment="CENTER" wrappingWidth="213.02782305610344" AnchorPane.topAnchor="610.41796875">
+      <Text fx:id="license_plate" fill="#02282f" layoutX="392.0" layoutY="594.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" textAlignment="CENTER" wrappingWidth="213.02782305610344" AnchorPane.topAnchor="570.0">
          <font>
             <Font name="Rostov" size="20.0" />
          </font>
@@ -136,6 +168,5 @@
             </Button>
          </children>
       </VBox>
-      <Button fx:id="personal_acc1" layoutY="259.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="99.0" style="-fx-background-color: green;" text="АККАУНТ" />
    </children>
 </AnchorPane>

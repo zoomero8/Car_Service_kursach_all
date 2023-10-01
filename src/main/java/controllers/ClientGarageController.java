@@ -357,7 +357,7 @@ public class ClientGarageController extends Protect_constants {
 
         });
 
-        // удаление машины
+//        // удаление машины
         button_delete.setOnMouseClicked(mouseEvent -> {
             boolean flag = !Objects.equals(now_license_plate, "");
             // проверка на пустоту данных
@@ -399,7 +399,6 @@ public class ClientGarageController extends Protect_constants {
                 stage.show();
                 text_mistake.setText("");
             }
-
         });
 
         // добавление услуги

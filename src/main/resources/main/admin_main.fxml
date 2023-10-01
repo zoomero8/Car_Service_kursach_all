@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -9,18 +14,18 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #889c65;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AdminMainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: green;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AdminMainController">
    <children>
       <VBox layoutY="35.0" prefHeight="365.0" prefWidth="60.0" style="-fx-background-color: #556B2F;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Pane prefHeight="220.0" prefWidth="40.0">
                <children>
-                  <Button fx:id="button_menu1" mnemonicParsing="false" prefHeight="220.0" prefWidth="60.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="button_menu1" mnemonicParsing="false" prefHeight="220.0" prefWidth="60.0" style="-fx-background-color: yellow;" />
                </children>
             </Pane>
             <Pane prefHeight="70.0" prefWidth="60.0" style="-fx-background-color: #5e7536;">
                <children>
-                  <Button fx:id="personal_acc1" mnemonicParsing="false" prefHeight="70.0" prefWidth="60.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="personal_acc1" mnemonicParsing="false" prefHeight="70.0" prefWidth="60.0" style="-fx-background-color: yellow;" />
                   <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/user.png" />
@@ -30,7 +35,7 @@
             </Pane>
             <Pane prefHeight="70.0" prefWidth="60.0">
                <children>
-                  <Button fx:id="personal_employees1" mnemonicParsing="false" prefHeight="70.0" prefWidth="60.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="personal_employees1" mnemonicParsing="false" prefHeight="70.0" prefWidth="60.0" style="-fx-background-color: yellow;" />
                   <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/employee.png" />
@@ -40,7 +45,7 @@
             </Pane>
             <Pane prefHeight="70.0" prefWidth="60.0">
                <children>
-                  <Button fx:id="personal_clients1" mnemonicParsing="false" prefHeight="70.0" prefWidth="60.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="personal_clients1" mnemonicParsing="false" prefHeight="70.0" prefWidth="60.0" style="-fx-background-color: yellow;" />
                   <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/client.png" />
@@ -50,42 +55,42 @@
             </Pane>
             <Pane prefHeight="70.0" prefWidth="60.0">
                <children>
-                  <Button fx:id="personal_service1" mnemonicParsing="false" prefHeight="70.0" prefWidth="60.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="personal_service1" mnemonicParsing="false" prefHeight="70.0" prefWidth="60.0" style="-fx-background-color: yellow;" />
                   <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../img/service.png" />
+                        <Image url="@../../../../../../Downloads/free-icon-wrench-1084962.png" />
                      </image>
                   </ImageView>
                </children>
             </Pane>
             <Pane prefHeight="100.0" prefWidth="60.0">
                <children>
-                  <Button fx:id="button_menu2" mnemonicParsing="false" prefHeight="100.0" prefWidth="60.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="button_menu2" mnemonicParsing="false" prefHeight="100.0" prefWidth="60.0" style="-fx-background-color: yellow;" />
                </children>
             </Pane>
          </children>
       </VBox>
-      <Text fill="#1e290b" layoutX="125.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="администратор" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="15.0">
+      <Text fill="#1e290b" layoutX="281.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Админ" AnchorPane.leftAnchor="281.0" AnchorPane.topAnchor="20.0">
          <font>
             <Font name="RussianPunk" size="78.0" />
          </font>
       </Text>
-      <Text fill="#1e290b" layoutX="254.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ФИО" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="230.0">
+      <Text fill="#1e290b" layoutX="254.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Фио" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="230.0">
          <font>
             <Font name="Rostov" size="30.0" />
          </font>
       </Text>
-      <Text fill="#1e290b" layoutX="120.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" text="АДРЕС" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="300.0">
+      <Text fill="#1e290b" layoutX="120.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Адрес" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="300.0">
          <font>
             <Font name="Rostov" size="30.0" />
          </font>
       </Text>
-      <Text fill="#1e290b" layoutX="128.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ЛОГИН" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="370.0">
+      <Text fill="#1e290b" layoutX="128.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Логин" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="370.0">
          <font>
             <Font name="Rostov" size="30.0" />
          </font>
       </Text>
-      <Text fill="#1e290b" layoutX="122.0" layoutY="495.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ПАРОЛЬ" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="440.0">
+      <Text fill="#1e290b" layoutX="122.0" layoutY="495.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Пароль" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="440.0">
          <font>
             <Font name="Rostov" size="30.0" />
          </font>
@@ -110,7 +115,7 @@
             <Font name="Monospaced Regular" size="27.0" />
          </font>
       </Text>
-      <Button fx:id="button_edit" layoutX="142.0" layoutY="524.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="194.0" style="-fx-background-color: #556B2F;" text="РЕДАКТИРОВАТЬ" textFill="#1e290b" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="535.0">
+      <Button fx:id="button_edit" layoutX="142.0" layoutY="524.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="194.0" style="-fx-background-color: цршеу;" text="РЕДАКТИРОВАТЬ" textFill="#1e290b" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="535.0">
          <font>
             <Font name="Rostov" size="20.0" />
          </font>
