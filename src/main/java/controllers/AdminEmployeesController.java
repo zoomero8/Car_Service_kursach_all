@@ -14,8 +14,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import main.Data_base_Con;
 import main.Protect_constants;
-import main.DatabaseHandler;
 import main.Main;
 import special.User;
 
@@ -119,7 +119,7 @@ public class AdminEmployeesController extends Protect_constants {
                 EMPLOYEES_TABLE + "." + EMPLOYEES_FIRST_NAME + " ASC, " + EMPLOYEES_TABLE + "." +
                 EMPLOYEES_SECOND_NAME + " ASC";
 
-        PreparedStatement statement = DatabaseHandler.getInstance().prepareStatement(query);
+        PreparedStatement statement = Data_base_Con.getInstance().prepareStatement(query);
         ResultSet result = statement.executeQuery();
 
         table.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -265,7 +265,7 @@ public class AdminEmployeesController extends Protect_constants {
             if (Objects.equals(post, "Уволен")) {
 
                 try {
-                    Connection connection = DatabaseHandler.getInstance();
+                    Connection connection = Data_base_Con.getInstance();
                     Statement statement1 = connection.createStatement();
                     statement1.executeUpdate("UPDATE " + EMPLOYEES_TABLE +
                             " SET " + EMPLOYEES_ACCESS_RIGHTS + " = '1' WHERE " +
@@ -300,7 +300,7 @@ public class AdminEmployeesController extends Protect_constants {
     }
 
     public static void delete() throws SQLException, ClassNotFoundException {
-        Connection connection = DatabaseHandler.getInstance();
+        Connection connection = Data_base_Con.getInstance();
         Statement statement = connection.createStatement();
         statement.executeUpdate("UPDATE " + EMPLOYEES_TABLE +
                 " SET " + EMPLOYEES_ACCESS_RIGHTS + " = '0' WHERE " +

@@ -14,8 +14,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import main.Data_base_Con;
 import main.Protect_constants;
-import main.DatabaseHandler;
 import main.Main;
 import special.Services;
 
@@ -117,7 +117,7 @@ public class AdminServicesController extends Protect_constants {
                 " = " + CARS_TABLE + "." + CARS_LICENSE_PLATE + " \n" +
                 "JOIN " + DETAILS_TABLE + " ON " + SERVICES_TABLE + "." + SERVICES_DETAIL_SERIAL_NUMBER +
                         " = " + DETAILS_TABLE + "." + DETAILS_SERIAL_NUMBER + ";";
-        PreparedStatement statement = DatabaseHandler.getInstance().prepareStatement(query);
+        PreparedStatement statement = Data_base_Con.getInstance().prepareStatement(query);
         ResultSet result = statement.executeQuery();
 
         table.setCellValueFactory(new PropertyValueFactory<>("date"));
@@ -276,7 +276,7 @@ public class AdminServicesController extends Protect_constants {
     }
 
     public static void delete() throws SQLException, ClassNotFoundException {
-        Connection connection = DatabaseHandler.getInstance();
+        Connection connection = Data_base_Con.getInstance();
         Statement statement = connection.createStatement();
         statement.executeUpdate("DELETE FROM " + SERVICES_TABLE + " WHERE " + SERVICES_ID + " = '" + id + "'");
 

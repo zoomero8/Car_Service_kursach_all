@@ -8,8 +8,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import main.Data_base_Con;
 import main.Protect_constants;
-import main.DatabaseHandler;
 import main.Main;
 
 import java.io.IOException;
@@ -101,7 +101,7 @@ public class AdminClientsEditController extends Protect_constants {
                     String query_clients = "SELECT * FROM " + CLIENTS_TABLE + " WHERE " + CLIENTS_LOGIN + " =?";
                     String query_employees = "SELECT * FROM " + EMPLOYEES_TABLE + " WHERE " + EMPLOYEES_LOGIN + " =?";
 
-                    PreparedStatement statement = DatabaseHandler.getInstance().prepareStatement(query_clients);
+                    PreparedStatement statement = Data_base_Con.getInstance().prepareStatement(query_clients);
                     statement.setString(1, login);
                     ResultSet result = statement.executeQuery();
                     if (result.next()) {
@@ -110,7 +110,7 @@ public class AdminClientsEditController extends Protect_constants {
                         flag = false;
                     }
 
-                    statement = DatabaseHandler.getInstance().prepareStatement(query_employees);
+                    statement = Data_base_Con.getInstance().prepareStatement(query_employees);
                     statement.setString(1, login);
                     result = statement.executeQuery();
                     if (result.next()) {
@@ -165,7 +165,7 @@ public class AdminClientsEditController extends Protect_constants {
                     CLIENTS_LOGIN + " = '" + login + "' WHERE " +
                     CLIENTS_LOGIN + " = '" + old_login + "';";
 
-            Connection connection = DatabaseHandler.getInstance();
+            Connection connection = Data_base_Con.getInstance();
             Statement statement = connection.createStatement();
             statement.executeUpdate(sqlAlterTable);
             System.out.println("Success!");
@@ -177,7 +177,7 @@ public class AdminClientsEditController extends Protect_constants {
             String sqlAlterTable = "UPDATE " +  CLIENTS_TABLE +
                     " SET " + CLIENTS_PASSWORD + " = '" + pass +
                     "' WHERE " + CLIENTS_LOGIN + " = '" + old_login + "';";
-            Connection connection = DatabaseHandler.getInstance();
+            Connection connection = Data_base_Con.getInstance();
             Statement statement = connection.createStatement();
             statement.executeUpdate(sqlAlterTable);
             System.out.println("Success!");
@@ -188,7 +188,7 @@ public class AdminClientsEditController extends Protect_constants {
             String sqlAlterTable = "UPDATE " + CLIENTS_TABLE +
                     " SET " + CLIENTS_LAST_NAME + " = '" + last_name +
                     "' WHERE " + CLIENTS_LOGIN + " = '" + old_login + "';";
-            Connection connection = DatabaseHandler.getInstance();
+            Connection connection = Data_base_Con.getInstance();
             Statement statement = connection.createStatement();
             statement.executeUpdate(sqlAlterTable);
             System.out.println("Success!");
@@ -199,7 +199,7 @@ public class AdminClientsEditController extends Protect_constants {
             String sqlAlterTable = "UPDATE " + CLIENTS_TABLE +
                     " SET " + CLIENTS_FIRST_NAME + " = '" + first_name +
                     "' WHERE " + CLIENTS_LOGIN + " = '" + old_login + "';";
-            Connection connection = DatabaseHandler.getInstance();
+            Connection connection = Data_base_Con.getInstance();
             Statement statement = connection.createStatement();
             statement.executeUpdate(sqlAlterTable);
             System.out.println("Success!");
@@ -211,7 +211,7 @@ public class AdminClientsEditController extends Protect_constants {
                     " SET " + CLIENTS_SECOND_NAME + " = '" +
                     second_name + "' WHERE " + CLIENTS_LOGIN +
                     " = '" + old_login + "';";
-            Connection connection = DatabaseHandler.getInstance();
+            Connection connection = Data_base_Con.getInstance();
             Statement statement = connection.createStatement();
             statement.executeUpdate(sqlAlterTable);
             System.out.println("Success!");
@@ -222,7 +222,7 @@ public class AdminClientsEditController extends Protect_constants {
             String sqlAlterTable = "UPDATE " + CLIENTS_TABLE +
                     " SET " + CLIENTS_ADDRESS + " = '" + address +
                     "' WHERE " + CLIENTS_LOGIN + " = '" + old_login + "';";
-            Connection connection = DatabaseHandler.getInstance();
+            Connection connection = Data_base_Con.getInstance();
             Statement statement = connection.createStatement();
             statement.executeUpdate(sqlAlterTable);
             System.out.println("Success!");
@@ -233,7 +233,7 @@ public class AdminClientsEditController extends Protect_constants {
             String sqlAlterTable = "UPDATE " + CLIENTS_TABLE +
                     " SET " + CLIENTS_PHONE_NUMBER + " = '" + phone +
                     "' WHERE " + CLIENTS_LOGIN + " = '" + old_login + "';";
-            Connection connection = DatabaseHandler.getInstance();
+            Connection connection = Data_base_Con.getInstance();
             Statement statement = connection.createStatement();
             statement.executeUpdate(sqlAlterTable);
             System.out.println("Success!");

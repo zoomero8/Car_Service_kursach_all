@@ -8,8 +8,8 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import main.Data_base_Con;
 import main.Protect_constants;
-import main.DatabaseHandler;
 import main.Main;
 
 import java.io.IOException;
@@ -92,9 +92,11 @@ public class AdminServicesEditController extends Protect_constants {
             }
             catch (Exception ignored) { }
 
-            if (text_start_date.getValue() != null) try { startDate = text_start_date.getValue(); }
+            if (text_start_date.getValue() != null)
+                try { startDate = text_start_date.getValue(); }
             catch (Exception ignored) { }
-            if (text_final_date.getValue() != null) try { finalDate = text_final_date.getValue(); }
+            if (text_final_date.getValue() != null)
+                try { finalDate = text_final_date.getValue(); }
             catch (Exception ignored) { }
 
             // начальная дата
@@ -110,7 +112,7 @@ public class AdminServicesEditController extends Protect_constants {
                 FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("pass.fxml"));
                 Scene scene;
                 try {
-                    scene = new Scene(fxmlLoader.load(), 400, 250);
+                    scene = new Scene(fxmlLoader.load(), 600, 400);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -132,7 +134,7 @@ public class AdminServicesEditController extends Protect_constants {
 
             try {
                 Connection connection;
-                connection = DatabaseHandler.getInstance();
+                connection = Data_base_Con.getInstance();
                 Statement statement = connection.createStatement();
                 statement.executeUpdate(sqlAlterTable);
                 System.out.println("Success!");
@@ -151,7 +153,7 @@ public class AdminServicesEditController extends Protect_constants {
 
             try {
                 Connection connection;
-                connection = DatabaseHandler.getInstance();
+                connection = Data_base_Con.getInstance();
                 Statement statement = connection.createStatement();
                 statement.executeUpdate(sqlAlterTable);
                 System.out.println("Success!");
@@ -170,7 +172,7 @@ public class AdminServicesEditController extends Protect_constants {
 
             try {
                 Connection connection;
-                connection = DatabaseHandler.getInstance();
+                connection = Data_base_Con.getInstance();
                 Statement statement = connection.createStatement();
                 statement.executeUpdate(sqlAlterTable);
                 System.out.println("Success!");
@@ -192,7 +194,7 @@ public class AdminServicesEditController extends Protect_constants {
 
                 try {
                     Connection connection;
-                    connection = DatabaseHandler.getInstance();
+                    connection = Data_base_Con.getInstance();
                     Statement statement = connection.createStatement();
                     statement.executeUpdate(sqlAlterTable);
                     System.out.println("Success!");
@@ -217,7 +219,7 @@ public class AdminServicesEditController extends Protect_constants {
 
                 try {
                     Connection connection;
-                    connection = DatabaseHandler.getInstance();
+                    connection = Data_base_Con.getInstance();
                     Statement statement = connection.createStatement();
                     statement.executeUpdate(sqlAlterTable);
                     System.out.println("Success!");
@@ -239,7 +241,7 @@ public class AdminServicesEditController extends Protect_constants {
 
             try {
                 Connection connection;
-                connection = DatabaseHandler.getInstance();
+                connection = Data_base_Con.getInstance();
                 Statement statement = connection.createStatement();
                 statement.executeUpdate(sqlAlterTable);
                 System.out.println("Success!");
@@ -251,7 +253,7 @@ public class AdminServicesEditController extends Protect_constants {
                     + "' WHERE " + SERVICES_ID + " = '" + id + "';";
 
             try {
-                Connection connection = DatabaseHandler.getInstance();
+                Connection connection = Data_base_Con.getInstance();
                 Statement statement = connection.createStatement();
                 statement.executeUpdate(sqlAlterTable);
                 System.out.println("Success!");

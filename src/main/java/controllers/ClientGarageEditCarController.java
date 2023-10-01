@@ -7,8 +7,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import main.Data_base_Con;
 import main.Protect_constants;
-import main.DatabaseHandler;
 import main.Main;
 import other.CarsBase;
 
@@ -114,7 +114,7 @@ public class ClientGarageEditCarController extends Protect_constants {
             old_license_plate = license_plate;
 
             try {
-                Connection connection = DatabaseHandler.getInstance();
+                Connection connection = Data_base_Con.getInstance();
                 Statement statement = connection.createStatement();
                 statement.executeUpdate(sqlAlterTable);
                 System.out.println("Success!");
@@ -133,7 +133,7 @@ public class ClientGarageEditCarController extends Protect_constants {
                     " = '" + old_license_plate + "';";
 
             try {
-                Connection connection = DatabaseHandler.getInstance();
+                Connection connection = Data_base_Con.getInstance();
                 Statement statement = connection.createStatement();
                 statement.executeUpdate(sqlAlterTable);
                 System.out.println("Success!");
@@ -152,7 +152,7 @@ public class ClientGarageEditCarController extends Protect_constants {
                     " = '" + old_license_plate + "';";
 
             try {
-                Connection connection = DatabaseHandler.getInstance();
+                Connection connection = Data_base_Con.getInstance();
                 Statement statement = connection.createStatement();
                 statement.executeUpdate(sqlAlterTable);
                 System.out.println("Success!");

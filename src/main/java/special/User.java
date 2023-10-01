@@ -8,7 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import main.DatabaseHandler;
+import main.Data_base_Con;
 import main.Main;
 import main.Protect_constants;
 
@@ -130,7 +130,7 @@ public class User extends Protect_constants {
                 String login, String password,
                 String post, String work_time,
                 String salary, String service_count,
-                String name, int y) {
+                String name, int x) {
         this.last_name = last_name;
         this.first_name = first_name;
         this.second_name = second_name;
@@ -168,7 +168,7 @@ public class User extends Protect_constants {
                 CLIENTS_LOGIN + ", " + CLIENTS_PASSWORD + ", " + CLIENTS_PHONE_NUMBER + ", status" +
                 ") VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
 
-        PreparedStatement preparedStatement = DatabaseHandler.getInstance().prepareStatement(insertNew);
+        PreparedStatement preparedStatement = Data_base_Con.getInstance().prepareStatement(insertNew);
         preparedStatement.setString(1, last_name);
         preparedStatement.setString(2, first_name);
         preparedStatement.setString(3, second_name);
@@ -335,7 +335,7 @@ public class User extends Protect_constants {
                     String query_clients = "SELECT * FROM " + CLIENTS_TABLE + " WHERE " + CLIENTS_LOGIN + " =?";
                     String query_employees = "SELECT * FROM " + EMPLOYEES_TABLE + " WHERE " + EMPLOYEES_LOGIN + " =?";
 
-                    PreparedStatement statement = DatabaseHandler.getInstance().prepareStatement(query_clients);
+                    PreparedStatement statement = Data_base_Con.getInstance().prepareStatement(query_clients);
                     statement.setString(1, login);
                     ResultSet result = statement.executeQuery();
                     if (result.next()) {
@@ -344,7 +344,7 @@ public class User extends Protect_constants {
                         flag = false;
                     }
 
-                    statement = DatabaseHandler.getInstance().prepareStatement(query_employees);
+                    statement = Data_base_Con.getInstance().prepareStatement(query_employees);
                     statement.setString(1, login);
                     result = statement.executeQuery();
                     if (result.next()) {

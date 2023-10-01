@@ -4,22 +4,22 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DatabaseHandler extends Configs{
-    private static Connection dbConnection;
+public class Data_base_Con extends Configs{
+    private static Connection db_con;
 
-    public static Connection getDbConnection()
+    public static Connection getDb_con()
             throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver" );
-        dbConnection = DriverManager.getConnection(
+        db_con = DriverManager.getConnection(
                 "jdbc:mysql://" + DB_HOST + ":" + DB_PORT + "/" + DB_NAME,
                 DB_USER, DB_PASS);
-        return dbConnection;
+        return db_con;
     }
 
     public static synchronized Connection getInstance() throws SQLException, ClassNotFoundException {
-        if (dbConnection == null) {
-            dbConnection = getDbConnection();
+        if (db_con == null) {
+            db_con = getDb_con();
         }
-        return dbConnection;
+        return db_con;
     }
 }

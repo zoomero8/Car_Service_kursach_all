@@ -12,8 +12,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import main.Data_base_Con;
 import main.Protect_constants;
-import main.DatabaseHandler;
 import main.Main;
 import special.EmployeesWork;
 import special.Services;
@@ -99,7 +99,7 @@ public class EmployeeWorkController extends Protect_constants {
         // таблица с деталями
         String query = "SELECT * FROM " + EMPLOYEES_WORK_TABLE + " WHERE " + EMPLOYEES_WORK_LOGIN +
                 " = '" + EmployeeMainController.getLogin() + "';";
-        PreparedStatement statement = DatabaseHandler.getInstance().prepareStatement(query);
+        PreparedStatement statement = Data_base_Con.getInstance().prepareStatement(query);
         ResultSet result = statement.executeQuery();
 
         ObservableList<EmployeesWork> ew1 = FXCollections.observableArrayList();
@@ -120,7 +120,7 @@ public class EmployeeWorkController extends Protect_constants {
         query = "SELECT * FROM " + SERVICES_TABLE + " WHERE " + SERVICES_ID_EMPLOYEE +
                 " = '" + EmployeeMainController.getLogin() +
                 "' AND " + SERVICES_FINAL_DATE + " > CURDATE();";
-        statement = DatabaseHandler.getInstance().prepareStatement(query);
+        statement = Data_base_Con.getInstance().prepareStatement(query);
         result = statement.executeQuery();
 
         ObservableList<Services> ew2 = FXCollections.observableArrayList();
@@ -142,7 +142,7 @@ public class EmployeeWorkController extends Protect_constants {
 
         // choice box
         query = "SELECT * FROM " + DETAILS_TABLE;
-        statement = DatabaseHandler.getInstance().prepareStatement(query);
+        statement = Data_base_Con.getInstance().prepareStatement(query);
         result = statement.executeQuery();
         HashSet<String> hs = new HashSet<>();
 
@@ -266,7 +266,7 @@ public class EmployeeWorkController extends Protect_constants {
                 EMPLOYEES_WORK_WORK_TIME + ") " +
                 "VALUES(?, ?, ?)";
 
-        PreparedStatement preparedStatement = DatabaseHandler.getInstance().prepareStatement(insertNew);
+        PreparedStatement preparedStatement = Data_base_Con.getInstance().prepareStatement(insertNew);
         preparedStatement.setString(1, EmployeeMainController.getLogin());
         preparedStatement.setString(2, detail);
         preparedStatement.setString(3, time);
@@ -277,7 +277,7 @@ public class EmployeeWorkController extends Protect_constants {
     }
 
     public static void delete() throws SQLException, ClassNotFoundException {
-        Connection connection = DatabaseHandler.getInstance();
+        Connection connection = Data_base_Con.getInstance();
         Statement statement = connection.createStatement();
         statement.executeUpdate("DELETE FROM " + EMPLOYEES_WORK_TABLE + " WHERE " +
                 EMPLOYEES_WORK_LOGIN + " = '" + EmployeeMainController.getLogin() +

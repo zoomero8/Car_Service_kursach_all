@@ -12,8 +12,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import main.Data_base_Con;
 import main.Protect_constants;
-import main.DatabaseHandler;
 import main.Main;
 import other.CarsBase;
 import other.ServiceRecordCreator;
@@ -148,7 +148,7 @@ public class ClientGarageController extends Protect_constants {
         // таблица с машинами нынешними
 
         String query = "SELECT * FROM cars WHERE id_owner = '" + ClientMainController.getLogin() + "' AND status = '1';";
-        PreparedStatement statement = DatabaseHandler.getDbConnection().prepareStatement(query);
+        PreparedStatement statement = Data_base_Con.getDb_con().prepareStatement(query);
         ResultSet result = statement.executeQuery();
 
         ObservableList<special.Cars> c1 = FXCollections.observableArrayList();
@@ -181,7 +181,7 @@ public class ClientGarageController extends Protect_constants {
                         " INNER JOIN " + DETAILS_TABLE + " ON " + SERVICES_TABLE + "." + SERVICES_DETAIL_SERIAL_NUMBER +
                         " = " + DETAILS_TABLE + "." + DETAILS_SERIAL_NUMBER +
                         " WHERE " + SERVICES_LICENSE_PLATE + " = '" + now_license_plate + "';";
-                PreparedStatement statement12 = DatabaseHandler.getInstance().prepareStatement(query12);
+                PreparedStatement statement12 = Data_base_Con.getInstance().prepareStatement(query12);
                 ResultSet result12 = statement12.executeQuery();
 
                 s.clear();
@@ -210,7 +210,7 @@ public class ClientGarageController extends Protect_constants {
                         " INNER JOIN " + CARS_TABLE + " AS c" +
                         " ON c." + CARS_MODEL + " = ds." + DETAILS_COMPATIBILITY_MODEL +
                         " WHERE c." + CARS_LICENSE_PLATE + " = '" + now_license_plate + "';";
-                PreparedStatement statement12 = DatabaseHandler.getInstance().prepareStatement(query12);
+                PreparedStatement statement12 = Data_base_Con.getInstance().prepareStatement(query12);
                 ResultSet result12 = statement12.executeQuery();
                 HashSet<String> hs = new HashSet<>();
 
@@ -232,7 +232,7 @@ public class ClientGarageController extends Protect_constants {
 
         query = "SELECT * FROM " + CARS_TABLE + " WHERE " + CARS_ID_OWNER +
                 " = '" + ClientMainController.getLogin() + "' AND " + CARS_STATUS + " = '0';";
-        statement = DatabaseHandler.getInstance().prepareStatement(query);
+        statement = Data_base_Con.getInstance().prepareStatement(query);
         result = statement.executeQuery();
 
         ObservableList<special.Cars> c2 = FXCollections.observableArrayList();
@@ -265,7 +265,7 @@ public class ClientGarageController extends Protect_constants {
                         " INNER JOIN " + DETAILS_TABLE + " ON " + SERVICES_TABLE + "." +
                         SERVICES_DETAIL_SERIAL_NUMBER + " = " + DETAILS_TABLE + "." + DETAILS_SERIAL_NUMBER +
                         " WHERE " + SERVICES_LICENSE_PLATE + " = '" + now_license_plate + "';";
-                PreparedStatement statement13 = DatabaseHandler.getInstance().prepareStatement(query13);
+                PreparedStatement statement13 = Data_base_Con.getInstance().prepareStatement(query13);
                 ResultSet result13 = statement13.executeQuery();
 
                 s.clear();
@@ -345,7 +345,7 @@ public class ClientGarageController extends Protect_constants {
 
             else if (!Objects.equals(now_license_plate, "")) {
                 try {
-                    Connection connection = DatabaseHandler.getInstance();
+                    Connection connection = Data_base_Con.getInstance();
                     Statement statement1 = connection.createStatement();
                     statement1.executeUpdate("UPDATE " + CARS_TABLE +
                             " SET status = '1' WHERE " +
@@ -447,7 +447,7 @@ public class ClientGarageController extends Protect_constants {
                             " INNER JOIN " + CARS_TABLE + " AS c" +
                             " ON c." + CARS_MODEL + " = ds." + DETAILS_COMPATIBILITY_MODEL +
                             " WHERE c." + CARS_LICENSE_PLATE + " = '" + now_license_plate + "';";
-                    PreparedStatement statement1 = DatabaseHandler.getInstance().prepareStatement(query1);
+                    PreparedStatement statement1 = Data_base_Con.getInstance().prepareStatement(query1);
                     ResultSet result1 = statement1.executeQuery();
                     if (result1.next()) {
                         price = result1.getString(DETAILS_PRICE);
@@ -552,7 +552,7 @@ public class ClientGarageController extends Protect_constants {
                     CARS_LICENSE_PLATE + ", " + CARS_MODEL + ", " + CARS_MAKE + ", status" +
                     ") VALUES(?, ?, ?, ?, ?)";
 
-            PreparedStatement preparedStatement = DatabaseHandler.getInstance().prepareStatement(insertNew);
+            PreparedStatement preparedStatement = Data_base_Con.getInstance().prepareStatement(insertNew);
             preparedStatement.setString(1, ClientMainController.getLogin());
             preparedStatement.setString(2, licensePlate);
             preparedStatement.setString(3, model);
@@ -564,7 +564,7 @@ public class ClientGarageController extends Protect_constants {
     }
 
     public static void delete() throws SQLException, ClassNotFoundException {
-        Connection connection = DatabaseHandler.getInstance();
+        Connection connection = Data_base_Con.getInstance();
         Statement statement = connection.createStatement();
         statement.executeUpdate("UPDATE " + CARS_TABLE +
                 " SET status = '0' WHERE " +

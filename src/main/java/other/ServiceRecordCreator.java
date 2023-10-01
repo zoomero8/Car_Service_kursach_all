@@ -3,8 +3,8 @@ package other;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import main.Data_base_Con;
 import main.Protect_constants;
-import main.DatabaseHandler;
 import main.Main;
 
 import java.io.IOException;
@@ -30,7 +30,7 @@ public class ServiceRecordCreator extends Protect_constants {
                     "ORDER BY " + EMPLOYEES_WORK_WORK_TIME + " ASC\n" +
                     "LIMIT 1;";
 
-            PreparedStatement statement = DatabaseHandler.getInstance().prepareStatement(query);
+            PreparedStatement statement = Data_base_Con.getInstance().prepareStatement(query);
             ResultSet resultSet = statement.executeQuery();
 
             String selectedEmployeeLogin = null;
@@ -64,7 +64,7 @@ public class ServiceRecordCreator extends Protect_constants {
                         "GROUP BY e." + EMPLOYEES_LOGIN + ", ew." + EMPLOYEES_WORK_WORK_TIME + "\n" +
                         "ORDER BY end_date ASC\n" +
                         "LIMIT 1;";
-                statement = DatabaseHandler.getInstance().prepareStatement(query);
+                statement = Data_base_Con.getInstance().prepareStatement(query);
                 resultSet = statement.executeQuery();
 
                 if (resultSet.next()) {
@@ -113,7 +113,7 @@ public class ServiceRecordCreator extends Protect_constants {
                     "WHERE c." + CARS_LICENSE_PLATE + " = '" +
                     licensePlate +  "' AND d." + DETAILS_CATEGORY +
                     " = '" + detailCategory + "'";
-            PreparedStatement statement = DatabaseHandler.getInstance().prepareStatement(query);
+            PreparedStatement statement = Data_base_Con.getInstance().prepareStatement(query);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 return resultSet.getString(DETAILS_SERIAL_NUMBER);
@@ -128,7 +128,7 @@ public class ServiceRecordCreator extends Protect_constants {
     private static void sql(String mileage, LocalDate startDate, LocalDate finalDate,
                             String selectedEmployeeLogin, String licensePlate,
                             String detailCategory) {
-        try (Connection connection = DatabaseHandler.getInstance()) {
+        try (Connection connection = Data_base_Con.getInstance()) {
             Statement statement = connection.createStatement();
 
         String insertQuery = "INSERT INTO " + SERVICES_TABLE + " (" + SERVICES_WORK_TIME + ", " +

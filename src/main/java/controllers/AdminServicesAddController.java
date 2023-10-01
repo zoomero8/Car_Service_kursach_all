@@ -8,8 +8,8 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import main.Data_base_Con;
 import main.Protect_constants;
-import main.DatabaseHandler;
 import main.Main;
 
 import java.io.IOException;
@@ -153,7 +153,7 @@ public class AdminServicesAddController extends Protect_constants {
 
         System.out.println(insertNew);
 
-        PreparedStatement preparedStatement = DatabaseHandler.getInstance().prepareStatement(insertNew);
+        PreparedStatement preparedStatement = Data_base_Con.getInstance().prepareStatement(insertNew);
         preparedStatement.setString(1, employee);
         preparedStatement.setString(2, mileage);
         preparedStatement.setString(3, work_time);

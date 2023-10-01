@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.text.Text;
 import main.Protect_constants;
-import main.DatabaseHandler;
+import main.Data_base_Con;
 import main.Main;
 
 import java.io.IOException;
@@ -124,7 +124,7 @@ public class AdminEmployeesAddController extends Protect_constants {
                 String query_clients = "SELECT * FROM " + CLIENTS_TABLE + " WHERE " + CLIENTS_LOGIN + " =?";
                 String query_employees = "SELECT * FROM " + EMPLOYEES_TABLE + " WHERE " + EMPLOYEES_LOGIN + " =?";
 
-                PreparedStatement statement = DatabaseHandler.getInstance().prepareStatement(query_clients);
+                PreparedStatement statement = Data_base_Con.getInstance().prepareStatement(query_clients);
                 statement.setString(1, login);
                 ResultSet result = statement.executeQuery();
                 if (result.next()) {
@@ -133,7 +133,7 @@ public class AdminEmployeesAddController extends Protect_constants {
                     flag = false;
                 }
 
-                statement = DatabaseHandler.getInstance().prepareStatement(query_employees);
+                statement = Data_base_Con.getInstance().prepareStatement(query_employees);
                 statement.setString(1, login);
                 result = statement.executeQuery();
                 if (result.next()) {
@@ -172,7 +172,7 @@ public class AdminEmployeesAddController extends Protect_constants {
                 EMPLOYEES_LOGIN + ", " + EMPLOYEES_PASSWORD + ", " + EMPLOYEES_ACCESS_RIGHTS +
                 ") VALUES(?, ?, ?, ?, ?, ?, ?)";
 
-        PreparedStatement preparedStatement = DatabaseHandler.getInstance().prepareStatement(insertNew);
+        PreparedStatement preparedStatement = Data_base_Con.getInstance().prepareStatement(insertNew);
         preparedStatement.setString(1, last_name);
         preparedStatement.setString(2, first_name);
         preparedStatement.setString(3, second_name);

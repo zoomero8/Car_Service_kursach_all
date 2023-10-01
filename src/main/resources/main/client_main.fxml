@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -9,18 +14,18 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #617f7e;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ClientMainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: green;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ClientMainController">
    <children>
       <VBox layoutY="35.0" prefHeight="365.0" prefWidth="60.0" style="-fx-background-color: #3f5958;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Pane prefHeight="220.0" prefWidth="40.0">
                <children>
-                  <Button fx:id="button_menu1" mnemonicParsing="false" prefHeight="220.0" prefWidth="60.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="button_menu1" mnemonicParsing="false" prefHeight="230.0" prefWidth="60.0" style="-fx-background-color: yellow;" />
                </children>
             </Pane>
             <Pane prefHeight="70.0" prefWidth="60.0" style="-fx-background-color: #517372;">
                <children>
-                  <Button fx:id="personal_acc1" mnemonicParsing="false" prefHeight="70.0" prefWidth="60.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="personal_acc1" mnemonicParsing="false" prefHeight="70.0" prefWidth="60.0" style="-fx-background-color: yellow;" />
                   <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/user.png" />
@@ -30,7 +35,7 @@
             </Pane>
             <Pane prefHeight="70.0" prefWidth="60.0">
                <children>
-                  <Button fx:id="personal_garage1" mnemonicParsing="false" prefHeight="70.0" prefWidth="60.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="personal_garage1" mnemonicParsing="false" prefHeight="70.0" prefWidth="60.0" style="-fx-background-color: yellow;" />
                   <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/garage.png" />
@@ -40,7 +45,7 @@
             </Pane>
             <Pane prefHeight="241.0" prefWidth="60.0">
                <children>
-                  <Button fx:id="button_menu2" mnemonicParsing="false" prefHeight="242.0" prefWidth="60.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="button_menu2" mnemonicParsing="false" prefHeight="242.0" prefWidth="60.0" style="-fx-background-color: yellow;" />
                </children>
             </Pane>
          </children>
@@ -90,7 +95,7 @@
             <Font name="Monospaced Regular" size="27.0" />
          </font>
       </Text>
-      <Button fx:id="button_edit" layoutX="142.0" layoutY="524.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="194.0" style="-fx-background-color: #486665;" text="РЕДАКТИРОВАТЬ" textFill="#02282f" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="535.0">
+      <Button fx:id="button_edit" layoutX="142.0" layoutY="524.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="194.0" style="-fx-background-color: white;" text="РЕДАКТИРОВАТЬ" textFill="#02282f" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="535.0">
          <font>
             <Font name="Rostov" size="20.0" />
          </font>

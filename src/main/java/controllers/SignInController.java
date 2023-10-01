@@ -10,8 +10,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import main.Data_base_Con;
 import main.Protect_constants;
-import main.DatabaseHandler;
 import main.Main;
 import special.User;
 
@@ -112,7 +112,7 @@ public class SignInController extends Protect_constants {
                         "HAVING e." + EMPLOYEES_LOGIN + " = '" + login + "' AND e." +
                         EMPLOYEES_PASSWORD + " = '" + password + "';";
 
-                PreparedStatement statement = DatabaseHandler.getInstance().prepareStatement(query_client);
+                PreparedStatement statement = Data_base_Con.getInstance().prepareStatement(query_client);
                 ResultSet result = statement.executeQuery(query_client);
 
                 if (result.next()) {
@@ -168,7 +168,7 @@ public class SignInController extends Protect_constants {
 
                 }
 
-                statement = DatabaseHandler.getInstance().prepareStatement(query_employee);
+                statement = Data_base_Con.getInstance().prepareStatement(query_employee);
                 result = statement.executeQuery(query_employee);
 
                 if (result.next()) {
@@ -223,7 +223,7 @@ public class SignInController extends Protect_constants {
                     }
                 }
 
-                statement = DatabaseHandler.getInstance().prepareStatement(query_admin);
+                statement = Data_base_Con.getInstance().prepareStatement(query_admin);
                 result = statement.executeQuery(query_admin);
 
                 if (result.next()) {
